@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://1qitn7i150qn"]
+
+[ext_resource type="Script" path="res://scenes/ground.gd" id="1_ggj84"]
+[ext_resource type="Texture2D" uid="uid://hi10wkcl7xhk" path="res://assets/Road-2D-Vector.jpg" id="1_ynbgd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd543"]
+size = Vector2(2312, 1113.67)
+
+[node name="Ground" type="Area2D"]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_ggj84")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 0
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(608, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(0, 1390)
+texture = ExtResource("1_ynbgd")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(1158.33, 1928.33)
+shape = SubResource("RectangleShape2D_kd543")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
