@@ -10,7 +10,7 @@ var bgScroll
 var score = 0
 var highscore = 0
 var screen_size : Vector2i
-const SCROLL_SPEED = 220
+const SCROLL_SPEED = 250
 const BG_SCROLL_SPEED = 7
 const PIPE_RANGE = 90
 const TOP_OFFSET = 30       
@@ -82,7 +82,7 @@ func _process(delta):
 func spawn_pipes():
 	var pipe = pipe_scene.instantiate()
 	pipe.position.x = screen_size.x + 250
-	pipe.position.y = (screen_size.y / 2) - randi_range(-PIPE_RANGE, PIPE_RANGE)
+	pipe.position.y = (screen_size.y / 2.0) - randi_range(-PIPE_RANGE, PIPE_RANGE)
 	pipe.hit.connect(player_hit)
 	pipe.pass_pipe.connect(increase_score)
 	add_child(pipe)

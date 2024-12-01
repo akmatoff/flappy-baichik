@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const GRAVITY = 1450.0
-const FLAP_STRENGTH = -540.0
-const MAX_FALL_SPEED = 760.0
+const GRAVITY = 1560.0
+const FLAP_STRENGTH = -500.0
+const MAX_FALL_SPEED = 800.0
 const START_POSITION = Vector2(120, 400)
 
 var flying = false

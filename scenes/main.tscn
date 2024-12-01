@@ -1,24 +1,24 @@
 [gd_scene load_steps=13 format=3 uid="uid://d07nab70dagyp"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_pkf3y"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_4135p"]
 [ext_resource type="PackedScene" uid="uid://lelytekf0wmk" path="res://scenes/pipe.tscn" id="2_h6chn"]
 [ext_resource type="PackedScene" uid="uid://dyjn4cyyma1jt" path="res://scenes/player.tscn" id="2_oj4cu"]
 [ext_resource type="PackedScene" uid="uid://3gki1vpu6jfw" path="res://scenes/menu.tscn" id="3_0joh2"]
+[ext_resource type="Shader" path="res://shaders/grayscale.gdshader" id="4_bahn4"]
 [ext_resource type="PackedScene" uid="uid://1qitn7i150qn" path="res://scenes/ground.tscn" id="4_dam57"]
 [ext_resource type="Texture2D" uid="uid://d1kux5uknwlte" path="res://assets/background.jpg" id="4_mfosg"]
 [ext_resource type="AudioStream" uid="uid://cy7bqimsscmy1" path="res://assets/sound/PUNCH.wav" id="6_h0pqv"]
 [ext_resource type="AudioStream" uid="uid://bewi655s7gid8" path="res://assets/sound/FLAP.wav" id="7_1n0p6"]
 [ext_resource type="AudioStream" uid="uid://ctkuyn0auuent" path="res://assets/sound/una matina.wav" id="9_5r6cn"]
-[ext_resource type="Shader" path="res://scenes/grayscale.gdshader" id="10_sw3lo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sji2u"]
 resource_local_to_scene = true
-shader = ExtResource("10_sw3lo")
+shader = ExtResource("4_bahn4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ggnmt"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("score_label", "highscore_label")]
-script = ExtResource("1_pkf3y")
+script = ExtResource("1_4135p")
 pipe_scene = ExtResource("2_h6chn")
 score_label = NodePath("Canvas/BoxContainer/MarginContainer/Score")
 highscore_label = NodePath("Canvas/MarginContainer/VBoxContainer/Highscore")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://3gki1vpu6jfw"]
 
-[ext_resource type="Script" path="res://scenes/menu.gd" id="1_s32re"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_s32re"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -30,5 +30,7 @@ alignment = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Restart"
+script = ExtResource("1_s32re")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="restart" from="MarginContainer/VBoxContainer/RestartButton" to="MarginContainer/VBoxContainer/RestartButton" method="_on_restart"]
